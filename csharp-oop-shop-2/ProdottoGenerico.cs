@@ -13,7 +13,7 @@ namespace CSharpShop
         private string descrizione;
         private double prezzo;
         private double IVA;
-
+        
         public Prodotto(string nome, double prezzo, double IVA)
         {
             this.codice = CalcoloCodice();
@@ -21,7 +21,7 @@ namespace CSharpShop
             this.prezzo = Math.Round(prezzo, 2); 
             this.IVA = IVA;
         }
-
+        
        
         public Prodotto(string nome, string descrizione, double prezzo, double IVA)
         {
@@ -105,7 +105,7 @@ namespace CSharpShop
         public string StampaPrezzoBase()
         {
             string prezzoBase = (this.prezzo).ToString();
-            prezzoBase += " €";
+            prezzoBase += " euro";
             return prezzoBase;
         }
 
@@ -113,7 +113,7 @@ namespace CSharpShop
         {
             double prezzoIVA = this.GetPrezzoIVA();
             string prezzo = prezzoIVA.ToString();
-            prezzo += " €";
+            prezzo += " euro";
             return prezzo;
         }
 
@@ -124,7 +124,7 @@ namespace CSharpShop
             return codiceStringa + this.nome;
         }
 
-        public void StampaProdotto()
+        public virtual void StampaProdotto()
         {
             Console.WriteLine("------ " + this.nome + " -----");
             Console.WriteLine();
@@ -137,6 +137,10 @@ namespace CSharpShop
             Console.WriteLine("Il codice NomeEsteso è: " + this.GetNomeEsteso());
             Console.WriteLine();
         }
+
+
+
     }
+
 
 }
